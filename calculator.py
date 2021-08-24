@@ -4,8 +4,8 @@ from PyQt5.QtCore import *
 import sys, os
 
 
+# copy this code if using pyinstaller
 def resource_path(relative_path):
-    """ Get the absolute path to the resource, works for dev and for PyInstaller """
     try:
         base_path = sys._MEIPASS
     except Exception:
@@ -106,9 +106,9 @@ class Calculator(QWidget):
             self.output.setText(self.output_text)   
 
         except SyntaxError and IndexError:
-            self.output.setPlaceholderText('Please enter number first')
+            self.output.setPlaceholderText('Please fill in number')
         except ZeroDivisionError:
-            self.output.setPlaceholderText("cannot")
+            self.output.setPlaceholderText("Number could not divided by zero")
         
 
 class MainWindow(QMainWindow):
